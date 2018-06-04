@@ -44,7 +44,7 @@ class Api implements ApiInterface
         $input->SetProduct_id($out_trade_no);//商品ID  可自定义
         $result = $notify->GetPayUrl($input);
         if (!isset($result['code_url'])) {
-            Log::error($result);
+            \Log::error($result);
 
             if (isset($result['err_code_des']))
                 throw new \Exception($result['err_code_des']);
